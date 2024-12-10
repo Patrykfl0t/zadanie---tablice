@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pobieranie liczb</title>
+    <script>
+        function pobieranieliczb() // Funkcja pobiera pięć liczb od użytkownika, dodaje je do tablicy i wyświetla na stronie.
+        { 
+            let liczby = []; // Tworzy pustą tablicę do przechowywania liczb.
+            for (let i = 0; i < 5; i++) { // Pętla iteruje pięć razy, aby zebrać pięć liczb.
+                let liczba = prompt(`Podaj liczbę ${i + 1}:`); // Wyświetla okienko dialogowe z prośbą o podanie liczby.
+                if (liczba !== null && !isNaN(liczba)) { // Sprawdza, czy podano liczbę (a nie pustą wartość ani tekst).
+                    liczby.push(Number(liczba)); // Konwertuje wartość na liczbę i dodaje ją do tablicy.
+                } else {
+                    alert("Podana wartość nie jest liczbą"); // Informuje użytkownika o błędzie.
+                    i--; // Powtarza iterację, aby użytkownik ponownie podał liczbę.
+                }
+            }
+            document.write("<h2>Pobrane liczby:</h2>"); // Wstawia nagłówek na stronę.
+            document.write("<p>" + liczby.join(", ") + "</p>"); // Wyświetla liczby jako listę oddzieloną przecinkami.
+        }
+    </script>
+</head>
+<body>
+    <h1>Pobieranie liczb</h1>
+    
+</body>
+</html>
